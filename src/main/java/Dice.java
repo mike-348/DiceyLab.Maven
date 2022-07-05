@@ -2,32 +2,36 @@ import java.util.Random;
 
 public class Dice {
 
-    int value;
-    int diceValue;
+    public int numOfRolls;
+    public int toss;
 
-    public void setValue(int diceValue) {
-        int value = diceValue;
+    public Dice(Integer numOfRolls) {
+        this.numOfRolls = numOfRolls;
     }
 
-    public int getValue() {
-        return diceValue;
-    }
-
-    public void rollDice() {
+    public int tossAndSum(){
         Random r = new Random();
-        value = r.nextInt(6) + 1;
+
+        int sum = 0;
+
+        for (int i = 0; i < numOfRolls; i++) {
+            numOfRolls += (6 * Math.random() + 1);
+            i++;
+        }
+        return sum;
     }
-}
-public class DiceOutput() {
 
-    public static void main(String[] args) {
-        Dice d1 = new Dice();
-        Dice d2 = new Dice();
+    public static void main (String[] args) {
+        Random r = new Random();
 
-        d1.rollDice();
-        d2.rollDice();
+        int result = 0;
 
-        System.out.println(d1+d2);
+        for(int i = 0; i < 50; i++) {
+            result = r.nextInt(6);
+            result++;
+            System.out.println(result);
+        }
+
     }
 
 }
