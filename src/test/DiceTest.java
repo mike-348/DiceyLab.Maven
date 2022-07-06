@@ -6,7 +6,7 @@ class DiceTest {
     @org.junit.jupiter.api.Test
     public void rollDiceTestMin() {
         //given
-        Dice d = new Dice();
+        Dice d = new Dice(2);
 
         //when
         int sumOfDice = d.rollDice();
@@ -21,7 +21,7 @@ class DiceTest {
     @Test
     public void rollDiceTestMax() {
         //given
-        Dice d = new Dice();
+        Dice d = new Dice(2);
 
         //when
         int sumOfDice = d.rollDice();

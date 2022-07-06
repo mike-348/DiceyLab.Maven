@@ -1,3 +1,4 @@
+import javax.management.ObjectInstance;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +7,7 @@ public class Bins {
     private int numOfDice;
     private int numOfBins;
 
-    ArrayList<Integer> bins;
+    static ArrayList<Integer> bins;
 
     public Bins(Integer numOfDice, Integer numOfBins) {
         bins = new ArrayList<Integer>();
@@ -17,13 +18,11 @@ public class Bins {
     }
 
     public void sumToBins(int sumOfDice) {
-        bins.add(sumOfDice, sumOfDice+1);
+        bins.add(sumOfDice, sumOfDice-1);
     }
 
     public int getBin(int input) {
         return bins.get(input+1);
     }
-
-
 
 }

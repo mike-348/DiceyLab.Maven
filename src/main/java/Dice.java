@@ -2,36 +2,24 @@ import java.util.Random;
 
 public class Dice {
 
-    public int numOfRolls;
+    public int dice;
     public int toss;
 
-    public Dice(Integer numOfRolls) {
-        this.numOfRolls = numOfRolls;
+    public Dice(Integer dice) {
+        this.dice = dice;
     }
 
-    public int tossAndSum(){
+    public int rollDice(){
         Random r = new Random();
 
         int sum = 0;
 
-        for (int i = 0; i < numOfRolls; i++) {
-            numOfRolls += (6 * Math.random() + 1);
+        for (int i = 0; i < dice; i++) {
+            sum += (6 * Math.random() + 1);
             i++;
         }
+        System.out.println(sum);
         return sum;
-    }
-
-    public static void main (String[] args) {
-        Random r = new Random();
-
-        int result = 0;
-
-        for(int i = 0; i < 50; i++) {
-            result = r.nextInt(6);
-            result++;
-            System.out.println(result);
-        }
-
     }
 
 }
