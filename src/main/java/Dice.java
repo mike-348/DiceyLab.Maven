@@ -2,24 +2,19 @@ import java.util.Random;
 
 public class Dice {
 
-    public int dice;
-    public int toss;
+    private int dice;
 
     public Dice(Integer dice) {
         this.dice = dice;
     }
 
-    public int rollDice(){
-        Random r = new Random();
+    public int tossAndSum(){
 
-        int sum = 0;
-
+        int result = 0;
         for (int i = 0; i < dice; i++) {
-            sum += (6 * Math.random() + 1);
-            i++;
+            result += (6 * Math.random() + 1);
         }
-        System.out.println(sum);
-        return sum;
+        return result;
     }
 
 }

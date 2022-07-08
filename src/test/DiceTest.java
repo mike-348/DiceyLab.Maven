@@ -9,7 +9,7 @@ class DiceTest {
         Dice d = new Dice(2);
 
         //when
-        int sumOfDice = d.rollDice();
+        int sumOfDice = d.tossAndSum();
 
         //then
         int min = 2;
@@ -21,14 +21,14 @@ class DiceTest {
     @Test
     public void rollDiceTestMax() {
         //given
-        Dice d = new Dice(2);
+        Dice d = new Dice(4);
 
         //when
-        int sumOfDice = d.rollDice();
+        int sumOfDice = d.tossAndSum();
 
         //then
-        int min = 2;
-        int max = 12;
+        int min = 4;
+        int max = 24;
         System.out.print(sumOfDice);
         Assertions.assertTrue(sumOfDice >= min);
     }

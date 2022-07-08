@@ -1,28 +1,30 @@
-import javax.management.ObjectInstance;
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
+
 public class Bins {
 
-    private int numOfDice;
-    private int numOfBins;
-
     static ArrayList<Integer> bins;
+    private int minBin;
+    private int maxBin;
+    public Bins(int minBin, int maxBin) {
+        this.minBin = minBin;
+        this.maxBin = maxBin;
+    }
 
-    public Bins(Integer numOfDice, Integer numOfBins) {
+    //create an array list with 12 elements, all 0;
+    public void createBins() {
         bins = new ArrayList<Integer>();
-        for (int i = numOfDice; i <= numOfBins; i++) {
-            bins.add(i, 0);
-            i++;
+        for (int i = minBin; i < maxBin+10; i++){
+            bins.add(0);
         }
     }
 
-    public void sumToBins(int sumOfDice) {
-        bins.add(sumOfDice, sumOfDice-1);
+    public void incrementBin(int binNum) {
+        bins.set(binNum-2, getBin(binNum)+1);
     }
 
-    public int getBin(int input) {
-        return bins.get(input+1);
+    public Integer getBin(int binNum) {
+        return bins.get(binNum - 2);
     }
 
 }
